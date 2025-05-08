@@ -1,0 +1,4 @@
+com/projjwal/batch_job/dto/VechileDTO.class
+com/projjwal/batch_job/BatchJobApplication.class
+com/projjwal/batch_job/config/ImportVechileInvoicesJob.class
+com/projjwal/batch_job/scheduler/JobTrigger.class
