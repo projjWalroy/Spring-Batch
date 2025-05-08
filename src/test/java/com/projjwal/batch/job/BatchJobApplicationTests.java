@@ -1,4 +1,4 @@
-package com.projjwal.batch_job;
+package com.projjwal.batch.job;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

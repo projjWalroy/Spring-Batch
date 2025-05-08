@@ -1,4 +1,4 @@
-package com.projjwal.batch_job.scheduler;
+package com.projjwal.batch.job.scheduler;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

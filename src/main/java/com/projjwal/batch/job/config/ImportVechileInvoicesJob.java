@@ -1,6 +1,8 @@
-package com.projjwal.batch_job.config;
+package com.projjwal.batch.job.config;
 
-import com.projjwal.batch_job.dto.VechileDTO;
+import com.projjwal.batch.job.dto.VechileDTO;
+import com.projjwal.batch.job.listner.CustomJobExecutionListner;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -17,8 +19,10 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Slf4j
 @Configuration
+@RequiredArgsConstructor
 public class ImportVechileInvoicesJob {
 
+    private final CustomJobExecutionListner customJobExecutionListner;
 
     @Bean
     public Job importVeichleJob(JobRepository jobRepository, Step importVeichleStep)
@@ -26,6 +30,7 @@ public class ImportVechileInvoicesJob {
         return new JobBuilder("importVeichleJob", jobRepository)
                 .incrementer(new RunIdIncrementer())
                 .start(importVeichleStep)
+                .listener(customJobExecutionListner)
                 .build();
     }
 
